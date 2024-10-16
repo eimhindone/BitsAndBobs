@@ -1,38 +1,44 @@
 import "./App.css";
+import {Link} from "react-router-dom"
 
-const tahoe_peaks = [
-  { name: "Freel", elevation: 10891 },
-  { name: "Monument", elevation: 10067 },
-  { name: "Pyramid", elevation: 9983 },
-  { name: "Tallac", elevation: 9735 }
-];
+function Home() {
+  return(
+    <div>
+      <nav>
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
+      </nav>
+      <h1>My website</h1>
+    </div>
+  )
+}
 
-function List({ data, renderItem, renderEmpty }) {
-  return !data.length ? (
-    renderEmpty
-  ) : (
-    <ul>
-      {data.map((item) => (
-        <li key={item.name}>
-          {renderItem(item)}
-        </li>
-      ))}
-    </ul>
-  );
+export function About() {
+  return(
+    <div>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/contact">Contact</Link>
+      </nav>
+      <h1>About me</h1>
+    </div>
+  )
+}
+
+export function Contact() {
+  return(
+    <div>
+      <nav>
+        <Link to="/about">About</Link>
+        <Link to="/">Home</Link>
+      </nav>
+      <h1>Contact</h1>
+    </div>
+  )
 }
 
 function App() {
-  return (
-    <List
-      data={tahoe_peaks}
-      renderEmpty={<p>This list is empty</p>}
-      renderItem={(item) => (
-        <>
-          {item.name} - {item.elevation} ft.
-        </>
-      )}
-    />
-  );
+  return <Home />
 }
 
 export default App;
