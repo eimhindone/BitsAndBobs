@@ -27,9 +27,10 @@
       function Main(props) {
         return (
           <section>
+            <img src="pic.jpg"/>
             <ul>
               {props.dishes.map((dish) => (
-                <li>{dish}</li>
+                <li>{dish.title}</li>
               ))}
             </ul>
           </section>
@@ -50,13 +51,19 @@
         "Salmon and Potatoes"
       ];
 
+
+      const dishObjects = dishes.map((dish,i) => ({
+        id: i,
+        title: dish
+      }));
+
       function App() {
         return (
           <div>
             <Header name="Cindy" />
             <Main
               adjective="amazing"
-              dishes={dishes}
+              dishes={dishObjects}
             />
             <Footer
               year={new Date().getFullYear()}
