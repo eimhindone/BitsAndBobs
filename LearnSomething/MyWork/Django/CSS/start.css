@@ -1,0 +1,41 @@
+/* this is a comment */
+
+p{
+  color: #0895a8
+}
+
+.firstdiv{
+  color: red;
+}
+
+.seconddiv{
+  color: blue
+}
+
+h1{
+  color: red;
+}
+
+
+li{
+  color: rgb(255,97,0);
+}
+
+
+
+
+h4{
+  color: rgb(255,97,0,0.5);
+}
+
+body{
+  background-color: lightblue;
+}
+
+div{
+  background-color: green;
+  border-color: black;
+  border-width: 10px;
+  border-style: dotted;
+
+}
